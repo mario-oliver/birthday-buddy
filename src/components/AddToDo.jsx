@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
 const AddToDo = ({ onAddTodo }) => {
-  const [name, setName] = useState('Placeholder');
+  const [name, setName] = useState('');
+  const [age, setAge] = useState('');
   return (
     <>
       <div>
@@ -12,13 +13,18 @@ const AddToDo = ({ onAddTodo }) => {
           onChange={(e) => setName(e.target.value)}
         ></input>
         <h4>Age</h4>
-        <input></input>
+        <input
+          placeholder="Add Age"
+          value={age}
+          onChange={(e) => setAge(e.target.value)}
+        ></input>
       </div>
       <button
         className="btn"
         onClick={() => {
           setName('');
-          onAddTodo(name);
+          setAge('');
+          onAddTodo(name, age);
         }}
       >
         Add

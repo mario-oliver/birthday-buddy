@@ -1,19 +1,25 @@
 import React, { useState } from 'react';
 import AddToDo from './AddToDo';
 
-const ToDoList = ({ newBirthdays }) => {
+const ToDoList = ({ newBirthdays, addAllNewBirthdays }) => {
   const [newBirthdaysList, setNewBirthdaysList] = useState(newBirthdays);
+  const [newBirthdaysIndex, setNewBirthdayIndex] = useState(
+    newBirthdaysList.length + 1
+  );
 
-  function handleAddToDo(name) {
-    console.log(name);
+  function handleAddToDo(name, age) {
     setNewBirthdaysList([
       ...newBirthdaysList,
       {
-        id: 6,
+        id: newBirthdaysIndex,
         name: name,
-        age: 600,
+        age: age,
       },
     ]);
+    //TODO: error when adding more than 1 new item --> incorrectly using setState (check documentations)
+    console.log(newBirthdaysList);
+    let newIndex = newBirthdaysList.length + 1;
+    setNewBirthdayIndex(newIndex);
   }
   return (
     <label>
@@ -39,7 +45,12 @@ const ToDoList = ({ newBirthdays }) => {
             </label>
           </li>
         </ul>
-        <button className="btn btn-block">Add to List</button>
+        <button
+          className="btn btn-block"
+          onClick={() => addAllNewBirthdays(newBirthdaysList)}
+        >
+          Add to List
+        </button>
       </div>
     </label>
   );

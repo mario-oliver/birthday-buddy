@@ -11,6 +11,22 @@ const App = () => {
     setPerson([]);
   };
 
+  let handleAddAllNewBirthdays = (newBirthdaysList) => {
+    console.log('ADDING ALL NEW BIRTHDAYS');
+    console.log(newBirthdaysList, people);
+    let newPeople = [...people];
+    newBirthdaysList.map((birthday) => {
+      let newObj = {
+        id: birthday.id,
+        name: birthday.name,
+        age: birthday.age,
+        img: `https://www.course-api.com/images/people/person-4.jpeg`, //        img: `https://www.course-api.com/images/people/person-${4}.jpeg`,
+      };
+      newPeople.push(newObj);
+    });
+    setPerson([...newPeople]);
+  };
+
   return (
     <>
       <main>
@@ -27,7 +43,10 @@ const App = () => {
         </section>
 
         <section className="container">
-          <ToDoList newBirthdays={newBirthdays} />
+          <ToDoList
+            newBirthdays={newBirthdays}
+            addAllNewBirthdays={handleAddAllNewBirthdays}
+          />
         </section>
       </main>
     </>
