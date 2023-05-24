@@ -1,4 +1,4 @@
-export default [
+export const birthdaysAlreadyAdded = [
   {
     id: 1,
     name: 'Bertie Yates',
@@ -28,5 +28,20 @@ export default [
     name: 'Lola Gardner',
     age: 29,
     image: 'https://www.course-api.com/images/people/person-5.jpeg',
+  },
+];
+
+export const birthdaysToAdd = [
+  {
+    id: 1,
+    name: 'John Marks',
+    age: '40',
+    img: 'https://www.course-api.com/images/people/person-5.jpeg',
+  },
+  {
+    id: 2,
+    name: 'Steve Jobs',
+    age: '60',
+    img: 'https://www.course-api.com/images/people/person-2.jpeg',
   },
 ];

@@ -1,10 +1,11 @@
 import { useState } from 'react';
-import data from './data';
+import { birthdaysAlreadyAdded, birthdaysToAdd } from './data';
 import List from './components/BirthdayList';
 import ToDoList from './components/ToDoList';
 
 const App = () => {
-  const [people, setPerson] = useState(data);
+  const [people, setPerson] = useState(birthdaysAlreadyAdded);
+  const [newBirthdays, setNewBirthdays] = useState(birthdaysToAdd);
 
   let handleRemoveAll = () => {
     setPerson([]);
@@ -26,7 +27,7 @@ const App = () => {
         </section>
 
         <section className="container">
-          <ToDoList />
+          <ToDoList newBirthdays={newBirthdays} />
         </section>
       </main>
     </>
