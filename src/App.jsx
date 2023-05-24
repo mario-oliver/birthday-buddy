@@ -20,7 +20,7 @@ const App = () => {
         id: birthday.id,
         name: birthday.name,
         age: birthday.age,
-        img: `https://www.course-api.com/images/people/person-4.jpeg`, //        img: `https://www.course-api.com/images/people/person-${4}.jpeg`,
+        image: 'https://www.course-api.com/images/people/person-4.jpeg',
       };
       newPeople.push(newObj);
     });

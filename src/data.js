@@ -36,12 +36,12 @@ export const birthdaysToAdd = [
     id: 1,
     name: 'John Marks',
     age: '40',
-    img: 'https://www.course-api.com/images/people/person-5.jpeg',
+    image: 'https://www.course-api.com/images/people/person-5.jpeg',
   },
   {
     id: 2,
     name: 'Steve Jobs',
     age: '60',
-    img: 'https://www.course-api.com/images/people/person-2.jpeg',
+    image: 'https://www.course-api.com/images/people/person-2.jpeg',
   },
 ];
