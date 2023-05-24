@@ -47,7 +47,10 @@ const ToDoList = ({ newBirthdays, addAllNewBirthdays }) => {
         </ul>
         <button
           className="btn btn-block"
-          onClick={() => addAllNewBirthdays(newBirthdaysList)}
+          onClick={() => {
+            setNewBirthdaysList([]);
+            addAllNewBirthdays(newBirthdaysList);
+          }}
         >
           Add to List
         </button>
