@@ -2,6 +2,7 @@ import { useState } from 'react';
 import { birthdaysAlreadyAdded, birthdaysToAdd } from './data';
 import List from './components/BirthdayList';
 import ToDoList from './components/ToDoList';
+import FetchGithubUsers from './components/FetchGithubUsers';
 
 const App = () => {
   const [people, setPerson] = useState(birthdaysAlreadyAdded);
@@ -47,6 +48,10 @@ const App = () => {
             newBirthdays={newBirthdays}
             addAllNewBirthdays={handleAddAllNewBirthdays}
           />
+        </section>
+
+        <section>
+          <FetchGithubUsers></FetchGithubUsers>
         </section>
       </main>
     </>
