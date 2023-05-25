@@ -3,6 +3,7 @@ import { birthdaysAlreadyAdded, birthdaysToAdd } from './data';
 import List from './components/BirthdayList';
 import ToDoList from './components/ToDoList';
 import FetchGithubUsers from './components/FetchGithubUsers';
+import FetchUserWithErrorAndLoad from './components/FetchUserWithErrorAndLoad';
 
 const App = () => {
   const [people, setPerson] = useState(birthdaysAlreadyAdded);
@@ -49,8 +50,12 @@ const App = () => {
             addAllNewBirthdays={handleAddAllNewBirthdays}
           />
         </section>
-
-        <section>
+      </main>
+      <main>
+        <FetchUserWithErrorAndLoad></FetchUserWithErrorAndLoad>
+      </main>
+      <main>
+        <section className="container">
           <FetchGithubUsers></FetchGithubUsers>
         </section>
       </main>
